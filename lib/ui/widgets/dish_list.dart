@@ -181,11 +181,28 @@ class _DishListState extends State<DishList> {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(10.0),
-                          child: Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  color: AppColors.mainBackground,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: const Center(
+                                  child: Icon(Icons.favorite_border),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  context.pop();
+                                },
+                                child: Container(
                                   height: 50,
                                   width: 50,
                                   decoration: BoxDecoration(
@@ -193,30 +210,11 @@ class _DishListState extends State<DishList> {
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: const Center(
-                                    child: Icon(Icons.favorite_border),
+                                    child: Icon(Icons.close),
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    context.pop();
-                                  },
-                                  child: Container(
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: AppColors.mainBackground,
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: const Center(
-                                      child: Icon(Icons.close),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         )
                       ]),
