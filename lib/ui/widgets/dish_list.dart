@@ -169,15 +169,57 @@ class _DishListState extends State<DishList> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        height: 232,
-                        width: double.infinity,
-                        padding: const EdgeInsets.only(left: 25, top: 20),
-                        decoration: BoxDecoration(
-                            color: AppColors.cellBackground,
-                            borderRadius: BorderRadius.circular(15)),
-                        child: Image.network(dish.imageURL),
-                      ),
+                      Stack(children: [
+                        Container(
+                          height: 232,
+                          width: double.infinity,
+                          padding: const EdgeInsets.only(left: 25, top: 20),
+                          decoration: BoxDecoration(
+                              color: AppColors.cellBackground,
+                              borderRadius: BorderRadius.circular(15)),
+                          child: Image.network(dish.imageURL),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Expanded(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.mainBackground,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: const Center(
+                                    child: Icon(Icons.favorite_border),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    context.pop();
+                                  },
+                                  child: Container(
+                                    height: 50,
+                                    width: 50,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.mainBackground,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: const Center(
+                                      child: Icon(Icons.close),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      ]),
                       Text(
                         dish.name,
                         style: const TextStyle(
