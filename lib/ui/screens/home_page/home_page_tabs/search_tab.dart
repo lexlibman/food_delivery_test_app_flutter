@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/main_app_bar.dart';
+
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
 
@@ -8,6 +10,9 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      appBar: MainAppBar(),
+      body: Placeholder(),
+    );
   }
 }

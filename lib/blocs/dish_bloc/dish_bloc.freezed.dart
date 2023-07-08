@@ -19,32 +19,38 @@ mixin _$DishEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetch,
+    required TResult Function(String teg) filterByTeg,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetch,
+    TResult? Function(String teg)? filterByTeg,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetch,
+    TResult Function(String teg)? filterByTeg,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(DishEventFetch value) fetch,
+    required TResult Function(DishEventFilterByTeg value) filterByTeg,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(DishEventFetch value)? fetch,
+    TResult? Function(DishEventFilterByTeg value)? filterByTeg,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DishEventFetch value)? fetch,
+    TResult Function(DishEventFilterByTeg value)? filterByTeg,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +112,7 @@ class _$DishEventFetch implements DishEventFetch {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetch,
+    required TResult Function(String teg) filterByTeg,
   }) {
     return fetch();
   }
@@ -114,6 +121,7 @@ class _$DishEventFetch implements DishEventFetch {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetch,
+    TResult? Function(String teg)? filterByTeg,
   }) {
     return fetch?.call();
   }
@@ -122,6 +130,7 @@ class _$DishEventFetch implements DishEventFetch {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetch,
+    TResult Function(String teg)? filterByTeg,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -134,6 +143,7 @@ class _$DishEventFetch implements DishEventFetch {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(DishEventFetch value) fetch,
+    required TResult Function(DishEventFilterByTeg value) filterByTeg,
   }) {
     return fetch(this);
   }
@@ -142,6 +152,7 @@ class _$DishEventFetch implements DishEventFetch {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(DishEventFetch value)? fetch,
+    TResult? Function(DishEventFilterByTeg value)? filterByTeg,
   }) {
     return fetch?.call(this);
   }
@@ -150,6 +161,7 @@ class _$DishEventFetch implements DishEventFetch {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DishEventFetch value)? fetch,
+    TResult Function(DishEventFilterByTeg value)? filterByTeg,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -161,6 +173,141 @@ class _$DishEventFetch implements DishEventFetch {
 
 abstract class DishEventFetch implements DishEvent {
   const factory DishEventFetch() = _$DishEventFetch;
+}
+
+/// @nodoc
+abstract class _$$DishEventFilterByTegCopyWith<$Res> {
+  factory _$$DishEventFilterByTegCopyWith(_$DishEventFilterByTeg value,
+          $Res Function(_$DishEventFilterByTeg) then) =
+      __$$DishEventFilterByTegCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String teg});
+}
+
+/// @nodoc
+class __$$DishEventFilterByTegCopyWithImpl<$Res>
+    extends _$DishEventCopyWithImpl<$Res, _$DishEventFilterByTeg>
+    implements _$$DishEventFilterByTegCopyWith<$Res> {
+  __$$DishEventFilterByTegCopyWithImpl(_$DishEventFilterByTeg _value,
+      $Res Function(_$DishEventFilterByTeg) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? teg = null,
+  }) {
+    return _then(_$DishEventFilterByTeg(
+      teg: null == teg
+          ? _value.teg
+          : teg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DishEventFilterByTeg implements DishEventFilterByTeg {
+  const _$DishEventFilterByTeg({required this.teg});
+
+  @override
+  final String teg;
+
+  @override
+  String toString() {
+    return 'DishEvent.filterByTeg(teg: $teg)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DishEventFilterByTeg &&
+            (identical(other.teg, teg) || other.teg == teg));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, teg);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DishEventFilterByTegCopyWith<_$DishEventFilterByTeg> get copyWith =>
+      __$$DishEventFilterByTegCopyWithImpl<_$DishEventFilterByTeg>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetch,
+    required TResult Function(String teg) filterByTeg,
+  }) {
+    return filterByTeg(teg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetch,
+    TResult? Function(String teg)? filterByTeg,
+  }) {
+    return filterByTeg?.call(teg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetch,
+    TResult Function(String teg)? filterByTeg,
+    required TResult orElse(),
+  }) {
+    if (filterByTeg != null) {
+      return filterByTeg(teg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DishEventFetch value) fetch,
+    required TResult Function(DishEventFilterByTeg value) filterByTeg,
+  }) {
+    return filterByTeg(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DishEventFetch value)? fetch,
+    TResult? Function(DishEventFilterByTeg value)? filterByTeg,
+  }) {
+    return filterByTeg?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DishEventFetch value)? fetch,
+    TResult Function(DishEventFilterByTeg value)? filterByTeg,
+    required TResult orElse(),
+  }) {
+    if (filterByTeg != null) {
+      return filterByTeg(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DishEventFilterByTeg implements DishEvent {
+  const factory DishEventFilterByTeg({required final String teg}) =
+      _$DishEventFilterByTeg;
+
+  String get teg;
+  @JsonKey(ignore: true)
+  _$$DishEventFilterByTegCopyWith<_$DishEventFilterByTeg> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

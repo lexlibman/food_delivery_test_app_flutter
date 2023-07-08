@@ -9,14 +9,13 @@ part 'category_event.dart';
 part 'category_state.dart';
 
 class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
-  bool categoryChosen = false;
   final CategoryRepo categoryRepo;
+
   CategoryBloc({required this.categoryRepo})
       : super(const CategoryState.loading()) {
     on<CategoryEventFetch>(
       (event, emit) async {
         emit(const CategoryState.loading());
-
         try {
           List<Category> categoriesLoaded = await categoryRepo.getCategories();
           emit(CategoryState.loaded(categoriesLoaded: categoriesLoaded));
